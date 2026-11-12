@@ -1,0 +1,57 @@
+<section class="page-heading">
+  <div>
+    <p class="eyebrow">YOUR AUDIENCE</p>
+    <h1>User personas</h1>
+    <p class="page-description">Get to know the people you design and build for.</p>
+  </div>
+  <a class="button button-primary heading-button" routerLink="/personas/create">
+    <span class="button-plus" aria-hidden="true">+</span>
+    Create persona
+  </a>
+</section>
+
+<section class="persona-grid" aria-label="User personas">
+  <article class="persona-card" *ngFor="let persona of personas">
+    <div class="card-top">
+      <div class="avatar" aria-hidden="true">{{ persona.fullName.charAt(0) }}</div>
+      <button
+        class="delete-button"
+        type="button"
+        [attr.aria-label]="'Delete ' + persona.fullName"
+        (click)="deletePersona(persona.id)"
+      >
+        <span aria-hidden="true">×</span>
+      </button>
+    </div>
+
+    <h2>{{ persona.fullName }}</h2>
+    <p class="occupation">{{ persona.occupation }}</p>
+
+    <div class="persona-details">
+      <div class="detail">
+        <span class="detail-label">Age</span>
+        <span>{{ persona.age }}</span>
+      </div>
+      <div class="detail">
+        <span class="detail-label">Gender</span>
+        <span>{{ persona.gender }}</span>
+      </div>
+      <div class="detail detail-location">
+        <span class="detail-label">Location</span>
+        <span>{{ persona.location }}</span>
+      </div>
+    </div>
+
+    <div class="interests">
+      <span class="detail-label">Interests</span>
+      <p>{{ persona.interests }}</p>
+    </div>
+  </article>
+</section>
+
+<section class="empty-state" *ngIf="personas.length === 0">
+  <div class="empty-icon" aria-hidden="true">✦</div>
+  <h2>No personas yet</h2>
+  <p>Create your first persona to start understanding your audience.</p>
+  <a class="button button-primary" routerLink="/personas/create">Create your first persona</a>
+</section>

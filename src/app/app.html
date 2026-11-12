@@ -1,0 +1,23 @@
+<div class="app-shell">
+  <header class="topbar">
+    <a class="brand" routerLink="/personas" aria-label="Persona Board home">
+      <span class="brand-mark" aria-hidden="true">P</span>
+      <span>Persona Board</span>
+    </a>
+
+    <nav class="main-nav" aria-label="Main navigation">
+      <a routerLink="/personas" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        Personas
+      </a>
+    </nav>
+
+    <a class="header-action" routerLink="/personas/create">
+      <span aria-hidden="true">+</span>
+      <span>New persona</span>
+    </a>
+  </header>
+
+  <main class="page-content">
+    <router-outlet></router-outlet>
+  </main>
+</div>

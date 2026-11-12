@@ -1,0 +1,120 @@
+<section class="form-page">
+  <a class="back-link" routerLink="/personas">
+    <span aria-hidden="true">←</span>
+    Back to personas
+  </a>
+
+  <div class="form-heading">
+    <p class="eyebrow">GET TO KNOW YOUR AUDIENCE</p>
+    <h1>Create a persona</h1>
+    <p class="page-description">Add a few details to bring your audience to life.</p>
+  </div>
+
+  <form #personaForm="ngForm" (ngSubmit)="savePersona(personaForm)" novalidate>
+    <section class="form-section">
+      <div class="section-title">
+        <span class="section-number">01</span>
+        <div>
+          <h2>About them</h2>
+          <p>Start with the basic details.</p>
+        </div>
+      </div>
+
+      <div class="field-grid">
+        <div class="field full-width">
+          <label for="fullName">Full name <span class="required-mark">*</span></label>
+          <input id="fullName" name="fullName" type="text" placeholder="e.g. Alex Morgan"
+            [(ngModel)]="newPersona.fullName" #fullName="ngModel" required maxlength="80">
+          <p class="field-error" *ngIf="fullName.invalid && (fullName.touched || submitted)">
+            Please enter a full name.
+          </p>
+        </div>
+
+        <div class="field">
+          <label for="age">Age <span class="required-mark">*</span></label>
+          <input id="age" name="age" type="number" placeholder="e.g. 28"
+            [(ngModel)]="newPersona.age" #age="ngModel" required min="1" max="120">
+          <p class="field-error" *ngIf="age.invalid && (age.touched || submitted)">
+            Enter an age between 1 and 120.
+          </p>
+        </div>
+
+        <div class="field">
+          <label for="gender">Gender <span class="required-mark">*</span></label>
+          <select id="gender" name="gender" [(ngModel)]="newPersona.gender" #gender="ngModel" required>
+            <option value="" disabled>Select gender</option>
+            <option value="Female">Female</option>
+            <option value="Male">Male</option>
+            <option value="Non-binary">Non-binary</option>
+            <option value="Prefer not to say">Prefer not to say</option>
+          </select>
+          <p class="field-error" *ngIf="gender.invalid && (gender.touched || submitted)">
+            Please select a gender.
+          </p>
+        </div>
+
+        <div class="field">
+          <label for="occupation">Occupation <span class="required-mark">*</span></label>
+          <input id="occupation" name="occupation" type="text" placeholder="e.g. Product designer"
+            [(ngModel)]="newPersona.occupation" #occupation="ngModel" required maxlength="80">
+          <p class="field-error" *ngIf="occupation.invalid && (occupation.touched || submitted)">
+            Please enter an occupation.
+          </p>
+        </div>
+
+        <div class="field">
+          <label for="location">Location <span class="required-mark">*</span></label>
+          <input id="location" name="location" type="text" placeholder="e.g. Portland, OR"
+            [(ngModel)]="newPersona.location" #location="ngModel" required maxlength="100">
+          <p class="field-error" *ngIf="location.invalid && (location.touched || submitted)">
+            Please enter a location.
+          </p>
+        </div>
+
+        <div class="field full-width">
+          <label for="interests">Interests <span class="required-mark">*</span></label>
+          <input id="interests" name="interests" type="text" placeholder="e.g. Hiking, design, podcasts"
+            [(ngModel)]="newPersona.interests" #interests="ngModel" required maxlength="200">
+          <p class="field-error" *ngIf="interests.invalid && (interests.touched || submitted)">
+            Please add at least one interest.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="form-section">
+      <div class="section-title">
+        <span class="section-number">02</span>
+        <div>
+          <h2>What matters to them</h2>
+          <p>Understand what they are working toward and what gets in the way.</p>
+        </div>
+      </div>
+
+      <div class="field-grid">
+        <div class="field full-width">
+          <label for="goals">Goals <span class="required-mark">*</span></label>
+          <textarea id="goals" name="goals" rows="3" placeholder="What would they like to achieve?"
+            [(ngModel)]="newPersona.goals" #goals="ngModel" required maxlength="500"></textarea>
+          <p class="field-error" *ngIf="goals.invalid && (goals.touched || submitted)">
+            Please describe at least one goal.
+          </p>
+        </div>
+
+        <div class="field full-width">
+          <label for="challenges">Challenges <span class="required-mark">*</span></label>
+          <textarea id="challenges" name="challenges" rows="3" placeholder="What challenges do they face?"
+            [(ngModel)]="newPersona.challenges" #challenges="ngModel" required maxlength="500"></textarea>
+          <p class="field-error" *ngIf="challenges.invalid && (challenges.touched || submitted)">
+            Please describe at least one challenge.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="form-actions">
+      <a class="button button-secondary" routerLink="/personas">Cancel</a>
+      <button class="button button-primary" type="submit">Save persona</button>
+    </div>
+  </form>
+</section>

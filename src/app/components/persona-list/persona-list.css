@@ -1,0 +1,252 @@
+.page-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin: 12px 0 32px;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  color: #477be8;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 8px;
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(28px, 4vw, 36px);
+  letter-spacing: -1.2px;
+}
+
+.page-description {
+  margin-bottom: 0;
+  color: #73809a;
+  font-size: 15px;
+}
+
+.button {
+  display: inline-flex;
+  min-height: 46px;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 0 18px;
+  border: 0;
+  border-radius: 9px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background-color 150ms ease, transform 150ms ease;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+}
+
+.button-primary {
+  color: #fff;
+  background: #3269db;
+  box-shadow: 0 5px 12px rgb(50 105 219 / 16%);
+}
+
+.button-primary:hover {
+  background: #285ac3;
+}
+
+.button-plus {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.persona-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.persona-card {
+  min-width: 0;
+  padding: 23px;
+  border: 1px solid #e8edf5;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 5px 18px rgb(35 61 106 / 4%);
+  transition: border-color 150ms ease, box-shadow 150ms ease, transform 150ms ease;
+}
+
+.persona-card:hover {
+  transform: translateY(-2px);
+  border-color: #d8e4fa;
+  box-shadow: 0 10px 24px rgb(35 61 106 / 8%);
+}
+
+.card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.avatar {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  border-radius: 14px;
+  color: #3269db;
+  background: #eaf1ff;
+  font-family: 'Manrope', sans-serif;
+  font-size: 19px;
+  font-weight: 800;
+}
+
+.persona-card:nth-child(3n + 2) .avatar {
+  color: #8c5ac8;
+  background: #f3edfb;
+}
+
+.persona-card:nth-child(3n) .avatar {
+  color: #258875;
+  background: #e7f6f2;
+}
+
+.delete-button {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border: 0;
+  border-radius: 8px;
+  color: #8792a7;
+  background: transparent;
+  cursor: pointer;
+  font-size: 23px;
+  line-height: 1;
+}
+
+.delete-button:hover {
+  color: #c34252;
+  background: #fff0f1;
+}
+
+.persona-card h2 {
+  overflow: hidden;
+  margin-bottom: 4px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 18px;
+  letter-spacing: -0.3px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.occupation {
+  margin-bottom: 20px;
+  color: #7d89a0;
+  font-size: 13px;
+}
+
+.persona-details {
+  display: grid;
+  grid-template-columns: 0.7fr 1fr 1.3fr;
+  gap: 9px;
+  padding: 15px 0;
+  border-top: 1px solid #edf0f5;
+  border-bottom: 1px solid #edf0f5;
+  font-size: 12px;
+}
+
+.detail {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 5px;
+  color: #34415b;
+  font-weight: 500;
+}
+
+.detail-location > span:last-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.detail-label {
+  color: #98a2b4;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.interests {
+  padding-top: 15px;
+}
+
+.interests p {
+  margin: 6px 0 0;
+  color: #46536b;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.empty-state {
+  display: flex;
+  min-height: 330px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 20px;
+  border: 1px dashed #dbe3f0;
+  border-radius: 14px;
+  background: #fff;
+  text-align: center;
+}
+
+.empty-icon {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  margin-bottom: 16px;
+  border-radius: 14px;
+  color: #3269db;
+  background: #eaf1ff;
+  font-size: 22px;
+}
+
+.empty-state h2 {
+  margin-bottom: 7px;
+  font-family: 'Manrope', sans-serif;
+}
+
+.empty-state p {
+  margin-bottom: 20px;
+  color: #7d89a0;
+  font-size: 14px;
+}
+
+@media (max-width: 900px) {
+  .persona-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .page-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    margin-bottom: 24px;
+  }
+
+  .persona-grid {
+    grid-template-columns: 1fr;
+  }
+}
